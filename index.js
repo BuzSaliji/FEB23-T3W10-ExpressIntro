@@ -16,6 +16,11 @@ app.get("/", (request, response) => {
     response.send("Hello World, this server is bananas!");
 });
 
+const someImportedRouterYay = require('./controllers/PokemonController.js');
+app.use("/pokemon", someImportedRouterYay);
+
+
+
 // configure the server -- happens all above this line ^^^
 
 // activate the server -- happens all below this line vvv
