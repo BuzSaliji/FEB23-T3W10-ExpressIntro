@@ -1,11 +1,13 @@
 // import the server package
 const bananas = require('express');
-
 // make an instance of the server that we  can customise and run
 const app = bananas();
 
 // this is an instance of the server aswell
 // const express = require('express')();
+
+const HOST = process.env.HOST || "localhost";
+const PORT = process.env.PORT || 3000;
 
 // GET localhost:3000/
 // app.get(route path, callback function)
@@ -18,8 +20,6 @@ app.get("/", (request, response) => {
 
 // activate the server -- happens all below this line vvv
 
-app.listen(3000, () => {
-    console.log("Server is running on port: " + 3000);
-
-    
+app.listen(PORT, HOST, () => {
+    console.log("Server is running on port: " + PORT);
 });
